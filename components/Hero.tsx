@@ -10,12 +10,13 @@ const Hero: React.FC<HeroProps> = ({ content }) => {
 
   return (
     <div className="relative h-screen w-full overflow-hidden">
-      {/* Background Image - optimized for mobile */}
+      {/* Background Image - works on both mobile and desktop */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-fixed"
+        className="absolute inset-0 bg-cover bg-no-repeat"
         style={{ 
           backgroundImage: `url("${HERO_IMAGE_URL}")`,
-          backgroundPosition: 'center 20%' 
+          backgroundPosition: 'center 60%',
+          backgroundAttachment: 'scroll'
         }}
       >
         <div className="absolute inset-0 bg-black/40" />
