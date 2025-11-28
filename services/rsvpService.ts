@@ -1,25 +1,28 @@
 import { RsvpData } from '../types';
 
-const STORAGE_KEY = 'wedding_rsvps';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwX341qlBguBzusvRiCtnANK0z9ba6iKR4UE1u76hMKJKTda0xJYv6YwduNWlKSY31JjQ/exec';
 
 export const saveRsvp = async (data: Omit<RsvpData, 'id' | 'timestamp'>): Promise<RsvpData> => {
-  // Simulate network delay
-  await new Promise((resolve) => setTimeout(resolve, 800));
+  const response = await fetch(GOOGLE_SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors', // Required for Google Apps Script
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
 
+  // With no-cors mode, we can't read the response, but if no error was thrown, it likely succeeded
   const newRsvp: RsvpData = {
     ...data,
     id: crypto.randomUUID(),
     timestamp: Date.now(),
   };
 
-  const existing = getRsvps();
-  const updated = [...existing, newRsvp];
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
-
   return newRsvp;
 };
 
 export const getRsvps = (): RsvpData[] => {
-  const data = localStorage.getItem(STORAGE_KEY);
-  return data ? JSON.parse(data) : [];
+  // RSVPs are now stored in Google Sheets, not localStorage
+  return [];
 };
