@@ -10,22 +10,25 @@ const Hero: React.FC<HeroProps> = ({ content }) => {
 
   return (
     <div className="relative h-screen w-full overflow-hidden">
-      {/* Background Image with Parallax-like fixed attachment */}
+      {/* Background Image - optimized for mobile */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
-        style={{ backgroundImage: `url("${HERO_IMAGE_URL}")` }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-fixed"
+        style={{ 
+          backgroundImage: `url("${HERO_IMAGE_URL}")`,
+          backgroundPosition: 'center 20%' 
+        }}
       >
         <div className="absolute inset-0 bg-black/40" />
       </div>
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white px-4">
-        <p className="mb-4 text-lg font-light tracking-[0.2em] uppercase text-stone-200 animate-fade-in-up">
+        <p className="mb-4 text-sm md:text-lg font-light tracking-[0.2em] uppercase text-stone-200 animate-fade-in-up">
           {content.hero.intro}
         </p>
-        <h1 className="mb-6 font-serif text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight text-white drop-shadow-lg">
+        <h1 className="mb-6 font-serif text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight text-white drop-shadow-lg">
           {couple.partner1} <span className="font-light italic text-rose-200">&</span> {couple.partner2}
         </h1>
-        <div className="mt-8 flex flex-col items-center gap-2 font-light tracking-wide text-lg md:text-xl">
+        <div className="mt-6 md:mt-8 flex flex-col items-center gap-2 font-light tracking-wide text-base md:text-xl">
           <p>{content.hero.date}</p>
           <div className="h-px w-12 bg-rose-300 my-2"></div>
           <p>{location.venue}</p>

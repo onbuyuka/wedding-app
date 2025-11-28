@@ -1,4 +1,4 @@
-export const HERO_IMAGE_URL = "./IMG_9203.JPEG";
+export const HERO_IMAGE_URL = "/wedding-app/IMG_9203.JPEG";
 
 const COMMON_DETAILS = {
   couple: {
