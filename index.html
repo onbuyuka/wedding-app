@@ -128,11 +128,10 @@
             background: #1c1917;
         }
 
-        .error {
+        .staticrypt-error {
             color: #dc2626;
             font-size: 0.875rem;
             margin-top: 1rem;
-            display: none;
         }
 
         .remember-me {
@@ -162,11 +161,12 @@
             Please enter the password to view our wedding details.
         </p>
 
-        <form id="staticrypt-form">
+        <form id="staticrypt-form" action="#" method="post">
             <div class="form-group">
                 <input 
                     type="password" 
-                    id="staticrypt-password" 
+                    id="staticrypt-password"
+                    name="password"
                     placeholder="Enter password"
                     autofocus
                 />
@@ -175,12 +175,11 @@
             <button type="submit">View Invitation</button>
 
             <div class="remember-me">
-                <input type="checkbox" id="staticrypt-remember" />
+                <input type="checkbox" id="staticrypt-remember" name="remember" />
                 <label for="staticrypt-remember">Remember me on this device</label>
             </div>
-
-            <p id="staticrypt-error" class="error"></p>
         </form>
     </div>
+    {STATICRYPT_SCRIPT}
 </body>
 </html>
