@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Password encryption (contains password)
+encrypt.js
+.staticrypt.json
+encrypted/

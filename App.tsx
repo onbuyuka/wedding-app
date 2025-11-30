@@ -95,8 +95,7 @@ const App: React.FC = () => {
         <p className="font-serif italic text-lg text-stone-300 mb-2">
            {content.couple.partner1} & {content.couple.partner2}
         </p>
-        <p className="uppercase tracking-widest text-xs mb-8">{content.hero.date}</p>
-        <p>&copy; 2026. Made with love.</p>
+        <p className="uppercase tracking-widest text-xs">{content.hero.date}</p>
       </footer>
     </div>
   );

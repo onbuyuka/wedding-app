@@ -30,17 +30,15 @@ export const CONTENT = {
       subtitle: "We can't wait to celebrate with you",
       whenLabel: "When",
       date: "June 20, 2026",
-      time: "6:30 PM",
+      time: "6:00 PM",
       whereLabel: "Where",
       scheduleTitle: "The Day",
       viewMap: "View Map",
       more: "and more...",
       schedule: [
-        { time: "6:30 PM", activity: "Welcome Cocktail" },
+        { time: "6:00 PM", activity: "Welcome Cocktail" },
         { time: "7:30 PM", activity: "Ceremony at Sunset" },
-        { time: "8:30 PM", activity: "Dinner & Celebration" },
-        { time: "11:00 PM", activity: "After Party" },
-        { time: "12:00 AM", activity: "Midnight Soup" },
+        { time: "8:30 PM", activity: "Dinner & Celebration" }
       ]
     },
     menu: {
@@ -48,20 +46,30 @@ export const CONTENT = {
       dietaryNote: "* Please let us know of any dietary restrictions in your RSVP.",
       sections: [
         {
-          category: "Welcome",
-          items: ["Aegean Meze Platter", "Fresh Urla Artichoke Hearts", "Local Olive Oil Tasting"],
+          category: "Starter",
+          items: ["Charcuterie Board"],
         },
         {
-          category: "Main Course",
+          category: "Cold Dishes",
           items: [
-            "Grilled Sea Bass with Lemon & Herbs",
-            "Slow-Cooked Lamb Shank with Purée",
-            "Wild Mushroom Risotto (Vegetarian)",
+            "Artichoke Salad with Avocado",
+            "Mütebbal with Pistachios",
+            "Beetroot Hummus",
+            "Vual's Love",
+            "Cretan-Style Zucchini Scrape",
           ],
         },
         {
-          category: "Dessert",
-          items: ["Wedding Cake", "Traditional Turkish Sweets", "Fresh Summer Fruits"],
+          category: "Hot Dishes",
+          items: [
+            "Hot Herb Plate",
+            "Sautéed Liver",
+            "Pacanga Börek",
+          ],
+        },
+        {
+          category: "Fruit",
+          items: ["Seasonal Fruit Platter"],
         },
       ]
     },
@@ -104,12 +112,9 @@ export const CONTENT = {
     },
     upload: {
       title: "Share Your Photos",
-      description: "We'd love to see the day through your eyes! Please upload your favorite moments from the wedding. Photos will be securely saved to our Google Drive album.",
-      dragDrop: "Drag & Drop photos here",
-      browse: "or click to browse",
-      uploading: "Uploading...",
-      recent: "Recently Uploaded",
-      driveNote: "Uploaded to Drive"
+      description: "We'd love to see the day through your eyes! Upload your favorite moments from the wedding and they'll be added to our shared album.",
+      button: "Upload Photos",
+      formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSf3ntW0jOZksKsy9k5Xg1fF2o9VzqRukJJPDoeRTKGTcDvULg/viewform"
     },
   },
   tr: {
@@ -126,20 +131,18 @@ export const CONTENT = {
     },
     info: {
       title: "Detaylar",
-      subtitle: "Sizinle kutlamak için sabırsızlanıyoruz",
+      subtitle: "Birlikte kutlamak için sabırsızlanıyoruz",
       whenLabel: "Ne Zaman",
       date: "20 Haziran 2026",
-      time: "18:30",
+      time: "18:00",
       whereLabel: "Nerede",
       scheduleTitle: "Program",
       viewMap: "Haritayı Gör",
       more: "ve dahası...",
       schedule: [
-        { time: "18:30", activity: "Hoşgeldin Kokteyli" },
+        { time: "18:00", activity: "Hoşgeldin Kokteyli" },
         { time: "19:30", activity: "Gün Batımında Nikah" },
-        { time: "20:30", activity: "Yemek & Eğlence" },
-        { time: "23:00", activity: "After Party" },
-        { time: "00:00", activity: "Gece Çorbası" },
+        { time: "20:30", activity: "Yemek & Eğlence" }
       ]
     },
     menu: {
@@ -148,19 +151,29 @@ export const CONTENT = {
       sections: [
         {
           category: "Başlangıç",
-          items: ["Ege Meze Tabağı", "Taze Urla Enginar Kalbi", "Yerel Zeytinyağı Tadımı"],
+          items: ["Şarküteri Tabağı"],
         },
         {
-          category: "Ana Yemek",
+          category: "Soğuklar",
           items: [
-            "Limonlu & Otlu Izgara Levrek",
-            "Ağır Ateşte Pişmiş Kuzu İncik & Püre",
-            "Yabani Mantarlı Risotto (Vejetaryen)",
+            "Avokadolu Enginar Salatası",
+            "Antep Fıstıklı Mütebbel",
+            "Pancarlı Humus",
+            "Vual Aşkı",
+            "Girit Usulü Kabak Sıyırma",
           ],
         },
         {
-          category: "Tatlı",
-          items: ["Düğün Pastası", "Geleneksel Türk Tatlıları", "Taze Yaz Meyveleri"],
+          category: "Sıcaklar",
+          items: [
+            "Sıcak Ot Tabağı",
+            "Yaprak Ciğer",
+            "Pacanga Böreği",
+          ],
+        },
+        {
+          category: "Meyve",
+          items: ["Mevsim Meyveleri Tabağı"],
         },
       ]
     },
@@ -203,12 +216,9 @@ export const CONTENT = {
     },
     upload: {
       title: "Fotoğraflarınızı Paylaşın",
-      description: "Günü sizin gözünüzden görmek isteriz! Lütfen çektiğiniz en güzel anları buraya yükleyin. Fotoğraflar güvenli bir şekilde Google Drive albümümüze eklenecektir.",
-      dragDrop: "Fotoğrafları buraya sürükleyin",
-      browse: "veya seçmek için tıklayın",
-      uploading: "Yükleniyor...",
-      recent: "Son Yüklenenler",
-      driveNote: "Drive'a yüklendi"
+      description: "Günü sizin gözünüzden görmek isteriz! Çektiğiniz en güzel anları yükleyin, paylaşılan albümümüze eklenecektir.",
+      button: "Fotoğraf Yükle",
+      formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSf3ntW0jOZksKsy9k5Xg1fF2o9VzqRukJJPDoeRTKGTcDvULg/viewform"
     },
   },
 };
