@@ -1,18 +1,37 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Defne & Onat Wedding App
 
-# Run and deploy your AI Studio app
+A beautiful wedding invitation website with RSVP functionality.
 
-This contains everything you need to run your app locally.
+**Live Site:** https://onbuyuka.github.io/wedding-app/
 
-View your app in AI Studio: https://ai.studio/apps/drive/1LNgHmcyjMdXL4e1M49GAbUiyxVrQE0MY
+## Features
+
+- 💍 Bilingual support (English & Turkish)
+- 📝 RSVP form with Google Sheets integration
+- 📸 Photo upload via Google Forms
+- 🔐 Password protected
+- 📱 Mobile responsive
 
 ## Run Locally
 
 **Prerequisites:** Node.js
 
 1. Install dependencies:
-   `npm install`
+   ```bash
+   npm install
+   ```
+
 2. Run the app:
-   `npm run dev`
+   ```bash
+   npm run dev
+   ```
+
+3. Open http://localhost:3000
+
+## Deploy
+
+To deploy to GitHub Pages:
+
+```bash
+npm run deploy
+```
