@@ -7,7 +7,7 @@ const COMMON_DETAILS = {
   },
   location: {
     venue: "Vual Urla",
-    address: "Rüstem, 35430 Urla/İzmir, Türkiye",
+    address: "İskele Mahallesi, 2018/9 Sokak, No: 4, Urla/İzmir, Türkiye",
     mapLink: "https://www.google.com/maps/search/?api=1&query=Vual+Urla+Izmir",
   },
 };
