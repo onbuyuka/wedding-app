@@ -30,15 +30,15 @@ export const CONTENT = {
       subtitle: "We can't wait to celebrate with you",
       whenLabel: "When",
       date: "June 20, 2026",
-      time: "6:00 PM",
+      time: "7:00 PM",
       whereLabel: "Where",
       scheduleTitle: "The Day",
       viewMap: "View Map",
       more: "and more...",
       schedule: [
-        { time: "6:00 PM", activity: "Welcome Cocktail" },
-        { time: "7:30 PM", activity: "Ceremony at Sunset" },
-        { time: "8:30 PM", activity: "Dinner & Celebration" }
+        { time: "7:00 PM", activity: "Welcome Cocktail" },
+        { time: "8:00 PM", activity: "Ceremony at Sunset" },
+        { time: "9:00 PM", activity: "Dinner & Celebration" }
       ]
     },
     menu: {
@@ -134,15 +134,15 @@ export const CONTENT = {
       subtitle: "Birlikte kutlamak için sabırsızlanıyoruz",
       whenLabel: "Ne Zaman",
       date: "20 Haziran 2026",
-      time: "18:00",
+      time: "19:00",
       whereLabel: "Nerede",
       scheduleTitle: "Program",
       viewMap: "Haritayı Gör",
       more: "ve dahası...",
       schedule: [
-        { time: "18:00", activity: "Hoşgeldin Kokteyli" },
-        { time: "19:30", activity: "Gün Batımında Nikah" },
-        { time: "20:30", activity: "Yemek & Eğlence" }
+        { time: "19:00", activity: "Hoşgeldin Kokteyli" },
+        { time: "20:00", activity: "Gün Batımında Nikah" },
+        { time: "21:00", activity: "Yemek & Eğlence" }
       ]
     },
     menu: {
