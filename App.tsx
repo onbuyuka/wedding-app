@@ -6,9 +6,14 @@ import RSVP from './components/RSVP';
 import PhotoUpload from './components/PhotoUpload';
 import { CONTENT } from './constants';
 
+const getInitialLanguage = (): 'en' | 'tr' => {
+  const browserLang = navigator.language || navigator.languages?.[0] || 'en';
+  return browserLang.toLowerCase().startsWith('tr') ? 'tr' : 'en';
+};
+
 const App: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [lang, setLang] = useState<'en' | 'tr'>('tr');
+  const [lang, setLang] = useState<'en' | 'tr'>(getInitialLanguage);
 
   const content = CONTENT[lang];
 
