@@ -112,9 +112,9 @@ export const CONTENT = {
     },
     upload: {
       title: "Share Your Photos",
-      description: "We'd love to see the day through your eyes! Share your favorite moments from the wedding to our shared album.",
-      button: "Open Shared Album",
-      formUrl: "https://photos.app.goo.gl/rcVTAVAKsY1KAtDB8"
+      description: "We'd love to see the day through your eyes! Upload your favorite moments from the wedding.",
+      button: "Upload Photos",
+      success: "{count} photo(s) uploaded successfully!"
     },
   },
   tr: {
@@ -216,9 +216,9 @@ export const CONTENT = {
     },
     upload: {
       title: "Fotoğraflarınızı Paylaşın",
-      description: "Günü sizin gözünüzden görmek isteriz! En güzel anlarınızı paylaşılan albümümüze ekleyin.",
-      button: "Albümü Aç",
-      formUrl: "https://photos.app.goo.gl/rcVTAVAKsY1KAtDB8"
+      description: "Günü sizin gözünüzden görmek isteriz! En güzel anlarınızı yükleyin.",
+      button: "Fotoğraf Yükle",
+      success: "{count} fotoğraf başarıyla yüklendi!"
     },
   },
 };
