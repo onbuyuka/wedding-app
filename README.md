@@ -7,8 +7,10 @@ A beautiful wedding invitation website with RSVP functionality.
 ## Features
 
 - 💍 Bilingual support (English & Turkish)
+- 🌐 Auto-detects browser language
 - 📝 RSVP form with Google Sheets integration
-- 📸 Photo upload via Google Forms
+- 📸 Photo upload via Cloudinary
+- 📊 Analytics via Cloudflare
 - 📱 Mobile responsive
 
 ## Run Locally
