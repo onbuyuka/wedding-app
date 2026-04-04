@@ -2,14 +2,13 @@
 
 A beautiful wedding invitation website with RSVP functionality.
 
-**Live Site:** https://onbuyuka.github.io/wedding-app/
+**Live Site:** https://defneonat.com
 
 ## Features
 
 - 💍 Bilingual support (English & Turkish)
 - 📝 RSVP form with Google Sheets integration
 - 📸 Photo upload via Google Forms
-- 🔐 Password protected
 - 📱 Mobile responsive
 
 ## Run Locally
