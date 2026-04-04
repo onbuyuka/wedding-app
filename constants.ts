@@ -1,4 +1,4 @@
-export const HERO_IMAGE_URL = "/wedding-app/IMG_9203.JPEG";
+export const HERO_IMAGE_URL = "/IMG_9203.JPEG";
 
 const COMMON_DETAILS = {
   couple: {
@@ -43,7 +43,7 @@ export const CONTENT = {
     },
     menu: {
       title: "The Menu",
-      dietaryNote: "* Please let us know of any dietary restrictions in your RSVP.",
+      dietaryNote: "* Menu subject to change. Please let us know of any dietary restrictions in your RSVP.",
       sections: [
         {
           category: "Starter",
@@ -147,7 +147,7 @@ export const CONTENT = {
     },
     menu: {
       title: "Menü",
-      dietaryNote: "* Lütfen alerji veya diyet tercihlerinizi LCV formunda belirtin.",
+      dietaryNote: "* Menü değişikliğe tabidir. Lütfen alerji veya diyet tercihlerinizi LCV formunda belirtin.",
       sections: [
         {
           category: "Başlangıç",
