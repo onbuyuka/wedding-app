@@ -34,3 +34,14 @@ export interface WeddingEventDetails {
   }[];
   registryLink?: string;
 }
+
+export interface GuideItem {
+  name: string;
+  description: string;
+  whereName: string;
+  mapLink: string;
+  image: string;
+  imageAlt: string;
+  sinceYear?: string;
+  coords?: [number, number];
+}

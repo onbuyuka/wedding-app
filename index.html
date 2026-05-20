@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <script>
       tailwind.config = {
         theme: {
@@ -50,6 +51,116 @@
       }
       ::-webkit-scrollbar-thumb:hover {
         background: #a8a29e; 
+      }
+
+      /* ---- Leaflet brand overrides ---- */
+      .guide-map-wrap .leaflet-container {
+        font-family: 'Lato', sans-serif;
+        background: #f8f5f1;
+      }
+      /* Soften the tile attribution */
+      .guide-map-wrap .leaflet-control-attribution {
+        background: rgba(255, 255, 255, 0.75) !important;
+        backdrop-filter: blur(6px);
+        font-size: 10px !important;
+        color: #78716c !important;
+        padding: 2px 8px !important;
+        border-top-left-radius: 6px !important;
+      }
+      .guide-map-wrap .leaflet-control-attribution a { color: #be123c !important; }
+
+      /* Custom zoom controls */
+      .guide-map-wrap .leaflet-control-zoom {
+        border: none !important;
+        box-shadow: 0 4px 12px rgba(28, 25, 23, 0.12) !important;
+        border-radius: 999px !important;
+        overflow: hidden;
+        background: white;
+      }
+      .guide-map-wrap .leaflet-control-zoom a {
+        background: white !important;
+        color: #44403c !important;
+        border: none !important;
+        font-weight: 300 !important;
+        font-size: 18px !important;
+        line-height: 28px !important;
+        width: 32px !important;
+        height: 32px !important;
+        transition: background 0.15s ease;
+      }
+      .guide-map-wrap .leaflet-control-zoom a:hover {
+        background: #fff1f2 !important;
+        color: #e11d48 !important;
+      }
+
+      /* Custom popup styling */
+      .guide-map-wrap .leaflet-popup-content-wrapper {
+        border-radius: 14px !important;
+        box-shadow: 0 12px 32px rgba(28, 25, 23, 0.18) !important;
+        padding: 0 !important;
+        overflow: hidden;
+        background: white;
+      }
+      .guide-map-wrap .leaflet-popup-content {
+        margin: 0 !important;
+        line-height: 1.4 !important;
+        width: 260px !important;
+      }
+      .guide-map-wrap .leaflet-popup-tip {
+        box-shadow: 0 4px 8px rgba(28, 25, 23, 0.08) !important;
+      }
+      .guide-map-wrap .leaflet-popup-close-button {
+        color: white !important;
+        top: 8px !important;
+        right: 8px !important;
+        background: rgba(0, 0, 0, 0.35) !important;
+        border-radius: 999px !important;
+        width: 24px !important;
+        height: 24px !important;
+        font-size: 16px !important;
+        line-height: 22px !important;
+        text-align: center !important;
+        padding: 0 !important;
+      }
+      .guide-map-wrap .leaflet-popup-close-button:hover { background: rgba(0,0,0,0.55) !important; }
+
+      /* Custom markers */
+      .guide-pin {
+        background: transparent !important;
+        border: none !important;
+      }
+      .guide-pin .dot {
+        width: 28px;
+        height: 28px;
+        border-radius: 999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Playfair Display', serif;
+        font-size: 13px;
+        font-weight: 600;
+        color: white;
+        box-shadow: 0 4px 10px rgba(28, 25, 23, 0.28), 0 0 0 3px rgba(255,255,255,0.95);
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+        cursor: pointer;
+      }
+      .guide-pin:hover .dot,
+      .guide-pin.is-active .dot {
+        transform: scale(1.18);
+        box-shadow: 0 6px 16px rgba(28, 25, 23, 0.32), 0 0 0 4px rgba(255,255,255,1), 0 0 0 8px var(--pin-halo, rgba(225, 29, 72, 0.25));
+      }
+      .guide-pin.is-active .dot::after {
+        content: '';
+        position: absolute;
+        inset: -8px;
+        border-radius: 999px;
+        border: 2px solid var(--pin-color, #e11d48);
+        animation: guide-pin-pulse 1.8s ease-out infinite;
+        pointer-events: none;
+      }
+      @keyframes guide-pin-pulse {
+        0%   { transform: scale(1);    opacity: 0.7; }
+        100% { transform: scale(1.9);  opacity: 0;   }
       }
     </style>
   <script type="importmap">
