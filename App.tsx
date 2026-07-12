@@ -22,10 +22,28 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const onHashChange = () => {
-      setIsGuidePage(isGuideHash());
-      window.scrollTo({ top: 0, behavior: 'auto' });
+      const guide = isGuideHash();
+      setIsGuidePage(guide);
+      const hash = window.location.hash;
+      if (guide || !hash || hash === '#') {
+        // Page-level navigation (guide route or home): reset to the top.
+        window.scrollTo({ top: 0, behavior: 'auto' });
+      } else {
+        // In-page section anchor (e.g. #rsvp from the hero button): scroll to it.
+        document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     };
     window.addEventListener('hashchange', onHashChange);
+
+    // Deep link: if the page is opened directly at a section anchor
+    // (e.g. /#rsvp), scroll to it once after the first render.
+    const hash = window.location.hash;
+    if (hash && !hash.startsWith('#/') && hash !== '#') {
+      requestAnimationFrame(() => {
+        document.getElementById(hash.slice(1))?.scrollIntoView({ block: 'start' });
+      });
+    }
+
     return () => window.removeEventListener('hashchange', onHashChange);
   }, []);
 
@@ -52,6 +70,27 @@ const App: React.FC = () => {
     setIsMobileMenuOpen(false);
   };
 
+  // Smoothly scroll to an in-page section. We update the URL with
+  // history.replaceState instead of assigning location.hash so the
+  // `hashchange` handler (which resets scroll to the top for the guide
+  // page route) does not fire and fight the scroll. Sections carry
+  // `scroll-mt-24`, so the sticky header never covers their heading.
+  const scrollToSection = useCallback((id: string) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    history.replaceState(null, '', `#${id}`);
+  }, []);
+
+  const handleSectionClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+      e.preventDefault();
+      setIsMobileMenuOpen(false);
+      scrollToSection(id);
+    },
+    [scrollToSection]
+  );
+
   const toggleLanguage = () => {
     setLang(prev => prev === 'en' ? 'tr' : 'en');
   };
@@ -72,9 +111,9 @@ const App: React.FC = () => {
               <a href="#" onClick={(e) => { e.preventDefault(); goHome(); }} className="hover:text-rose-500 transition-colors">{content.guide.backToWedding}</a>
             ) : (
               <>
-                <a href="#details" className="hover:text-rose-500 transition-colors">{content.nav.details}</a>
-                <a href="#rsvp" className="hover:text-rose-500 transition-colors">{content.nav.rsvp}</a>
-                <a href="#upload" className="hover:text-rose-500 transition-colors">{content.nav.upload}</a>
+                <a href="#details" onClick={(e) => handleSectionClick(e, 'details')} className="hover:text-rose-500 transition-colors">{content.nav.details}</a>
+                <a href="#rsvp" onClick={(e) => handleSectionClick(e, 'rsvp')} className="hover:text-rose-500 transition-colors">{content.nav.rsvp}</a>
+                <a href="#upload" onClick={(e) => handleSectionClick(e, 'upload')} className="hover:text-rose-500 transition-colors">{content.nav.upload}</a>
                 <a href="#/guide" onClick={() => closeMobileMenu()} className="hover:text-rose-500 transition-colors">{content.nav.guide}</a>
               </>
             )}
@@ -119,9 +158,9 @@ const App: React.FC = () => {
               <a href="#" onClick={(e) => { e.preventDefault(); closeMobileMenu(); goHome(); }} className="hover:text-rose-500 transition-colors">{content.guide.backToWedding}</a>
             ) : (
               <>
-                <a href="#details" onClick={closeMobileMenu} className="hover:text-rose-500 transition-colors">{content.nav.details}</a>
-                <a href="#rsvp" onClick={closeMobileMenu} className="hover:text-rose-500 transition-colors">{content.nav.rsvp}</a>
-                <a href="#upload" onClick={closeMobileMenu} className="hover:text-rose-500 transition-colors">{content.nav.upload}</a>
+                <a href="#details" onClick={(e) => handleSectionClick(e, 'details')} className="hover:text-rose-500 transition-colors">{content.nav.details}</a>
+                <a href="#rsvp" onClick={(e) => handleSectionClick(e, 'rsvp')} className="hover:text-rose-500 transition-colors">{content.nav.rsvp}</a>
+                <a href="#upload" onClick={(e) => handleSectionClick(e, 'upload')} className="hover:text-rose-500 transition-colors">{content.nav.upload}</a>
                 <a href="#/guide" onClick={closeMobileMenu} className="hover:text-rose-500 transition-colors">{content.nav.guide}</a>
               </>
             )}
