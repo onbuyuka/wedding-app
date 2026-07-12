@@ -174,6 +174,10 @@ export const CONTENT = {
     rsvp: {
       title: "R.S.V.P.",
       deadline: "Kindly respond by May 20, 2026",
+      closed: {
+        title: "RSVPs Are Closed",
+        message: "The final date to RSVP has passed — shame on you! Please call whoever invited you and RSVP by phone."
+      },
       fields: {
         firstName: "First Name",
         lastName: "Last Name",
@@ -352,6 +356,10 @@ export const CONTENT = {
     rsvp: {
       title: "L.C.V.",
       deadline: "Lütfen 20 Mayıs 2026 tarihine kadar yanıt verin",
+      closed: {
+        title: "LCV Süresi Doldu",
+        message: "Son LCV tarihi geçti — ayıp size! Lütfen sizi davet eden kişiyi arayıp telefonla bildirin."
+      },
       fields: {
         firstName: "Ad",
         lastName: "Soyad",
