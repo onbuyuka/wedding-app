@@ -37,7 +37,7 @@ const Hero: React.FC<HeroProps> = ({ content }) => {
         
         <a 
           href="#rsvp" 
-          className="mt-12 rounded-full border border-white/30 bg-white/10 px-8 py-3 text-sm font-semibold uppercase tracking-wider text-white backdrop-blur-sm transition-all hover:bg-white hover:text-stone-900"
+          className="mt-12 rounded-full border border-white/30 bg-white/10 px-8 py-3 text-sm font-semibold uppercase tracking-wider text-white backdrop-blur-xs transition-all hover:bg-white hover:text-stone-900"
         >
           {content.hero.cta}
         </a>

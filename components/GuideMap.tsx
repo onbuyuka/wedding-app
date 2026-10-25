@@ -157,7 +157,7 @@ const SidePanelCard: React.FC<SidePanelCardProps> = ({
     className={`group w-full text-left flex gap-3 p-3 rounded-xl transition-all duration-200 ${
       active
         ? 'bg-white shadow-md ring-1 ring-stone-200 scale-[1.01]'
-        : 'bg-transparent hover:bg-white/70 hover:shadow-sm'
+        : 'bg-transparent hover:bg-white/70 hover:shadow-xs'
     }`}
   >
     <div className="relative shrink-0">
@@ -244,12 +244,12 @@ const GuideMap: React.FC<GuideMapProps> = ({
 
   return (
     <div
-      className="guide-map-wrap relative rounded-3xl overflow-hidden shadow-2xl ring-1 ring-stone-200 bg-gradient-to-br from-stone-50 to-stone-100"
+      className="guide-map-wrap relative rounded-3xl overflow-hidden shadow-2xl ring-1 ring-stone-200 bg-linear-to-br from-stone-50 to-stone-100"
       style={{ height: heightPx, isolation: 'isolate' }}
     >
       <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] h-full min-h-0">
         {/* Side panel (desktop) */}
-        <aside className="hidden md:flex flex-col min-h-0 border-r border-stone-200/80 bg-gradient-to-b from-white/90 to-stone-50/90 backdrop-blur-sm">
+        <aside className="hidden md:flex flex-col min-h-0 border-r border-stone-200/80 bg-linear-to-b from-white/90 to-stone-50/90 backdrop-blur-xs">
           <header className="px-5 pt-5 pb-3 border-b border-stone-200/70">
             <div
               className="inline-block text-[10px] uppercase tracking-[0.2em] font-semibold px-2.5 py-1 rounded-full"
@@ -322,9 +322,9 @@ const GuideMap: React.FC<GuideMapProps> = ({
                           loading="lazy"
                           className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/55 to-transparent" />
+                        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-black/55 to-transparent" />
                         <div className="absolute left-3 bottom-2 right-3">
-                          <h4 className="font-serif text-white text-lg leading-tight drop-shadow">
+                          <h4 className="font-serif text-white text-lg leading-tight drop-shadow-sm">
                             {item.name}
                           </h4>
                         </div>
@@ -379,9 +379,9 @@ const GuideMap: React.FC<GuideMapProps> = ({
           </MapContainer>
 
           {/* Mobile-only count chip overlaid on map */}
-          <div className="md:hidden absolute top-3 left-3 z-[400]">
+          <div className="md:hidden absolute top-3 left-3 z-400">
             <div
-              className="text-[10px] uppercase tracking-[0.2em] font-semibold px-3 py-1.5 rounded-full shadow-md backdrop-blur bg-white/90"
+              className="text-[10px] uppercase tracking-[0.2em] font-semibold px-3 py-1.5 rounded-full shadow-md backdrop-blur-sm bg-white/90"
               style={{ color: accent }}
             >
               {pinnable.length} {pinnable.length === 1 ? 'spot' : 'spots'}
@@ -393,7 +393,7 @@ const GuideMap: React.FC<GuideMapProps> = ({
             <button
               type="button"
               onClick={() => setSelectedIndex(null)}
-              className="absolute top-3 right-3 z-[400] text-[10px] uppercase tracking-[0.2em] font-semibold px-3 py-1.5 rounded-full shadow-md backdrop-blur bg-white/90 text-stone-600 hover:text-stone-900 transition-colors"
+              className="absolute top-3 right-3 z-400 text-[10px] uppercase tracking-[0.2em] font-semibold px-3 py-1.5 rounded-full shadow-md backdrop-blur-sm bg-white/90 text-stone-600 hover:text-stone-900 transition-colors"
             >
               Reset view
             </button>

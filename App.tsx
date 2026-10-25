@@ -99,7 +99,7 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-stone-50 font-sans text-stone-900 selection:bg-rose-200">
       
       {/* Sticky Header */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-white/50 shadow-sm h-16 flex items-center">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-white/50 shadow-xs h-16 flex items-center">
         <div className="container mx-auto px-6 flex justify-between items-center">
           <a href="#" onClick={(e) => { e.preventDefault(); goHome(); }} className="text-xl font-serif font-bold tracking-tight text-stone-800 cursor-pointer">
              {content.couple.partner1.charAt(0)} & {content.couple.partner2.charAt(0)}
@@ -132,7 +132,7 @@ const App: React.FC = () => {
             
             {/* Mobile Menu Button */}
             <button 
-              className="md:hidden p-2 text-stone-600 hover:text-stone-900 focus:outline-none"
+              className="md:hidden p-2 text-stone-600 hover:text-stone-900 focus:outline-hidden"
               onClick={toggleMobileMenu}
               aria-label="Toggle menu"
             >

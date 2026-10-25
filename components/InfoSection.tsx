@@ -18,7 +18,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({ content }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
           {/* When */}
-          <div className="flex flex-col items-center p-6 bg-white shadow-sm rounded-lg hover:shadow-md transition-shadow">
+          <div className="flex flex-col items-center p-6 bg-white shadow-xs rounded-lg hover:shadow-md transition-shadow">
             <div className="w-12 h-12 flex items-center justify-center bg-rose-100 rounded-full mb-6 text-rose-500">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
@@ -30,7 +30,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({ content }) => {
           </div>
 
           {/* Where */}
-          <div className="flex flex-col items-center p-6 bg-white shadow-sm rounded-lg hover:shadow-md transition-shadow">
+          <div className="flex flex-col items-center p-6 bg-white shadow-xs rounded-lg hover:shadow-md transition-shadow">
             <div className="w-12 h-12 flex items-center justify-center bg-rose-100 rounded-full mb-6 text-rose-500">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -51,7 +51,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({ content }) => {
           </div>
 
           {/* Schedule */}
-          <div className="flex flex-col items-center p-6 bg-white shadow-sm rounded-lg hover:shadow-md transition-shadow">
+          <div className="flex flex-col items-center p-6 bg-white shadow-xs rounded-lg hover:shadow-md transition-shadow">
              <div className="w-12 h-12 flex items-center justify-center bg-rose-100 rounded-full mb-6 text-rose-500">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" />

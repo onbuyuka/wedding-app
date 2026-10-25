@@ -36,6 +36,9 @@ patch version updates are grouped; major updates stay separate. Security updates
 run independently when GitHub detects a vulnerable dependency. Validate updates
 with a type-check and production build before deploying.
 
+Tailwind CSS 4 requires Safari 16.4+, Chrome 111+ or Firefox 128+. Its theme and
+compatibility styles are maintained in `index.css`.
+
 ## Deploy
 
 To deploy to GitHub Pages:

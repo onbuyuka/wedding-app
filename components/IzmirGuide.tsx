@@ -29,7 +29,7 @@ const GuideRow: React.FC<GuideRowProps> = ({ item, index, sinceLabel, whereLabel
   const imageOnRight = index % 2 === 1;
   return (
     <article className="grid md:grid-cols-2 gap-8 md:gap-12 items-center py-12 border-b border-stone-200 last:border-b-0">
-      <div className={`overflow-hidden rounded-xl shadow-lg aspect-[4/3] bg-stone-100 ${imageOnRight ? 'md:order-2' : ''}`}>
+      <div className={`overflow-hidden rounded-xl shadow-lg aspect-4/3 bg-stone-100 ${imageOnRight ? 'md:order-2' : ''}`}>
         {item.image ? (
           <img
             src={item.image}
@@ -38,7 +38,7 @@ const GuideRow: React.FC<GuideRowProps> = ({ item, index, sinceLabel, whereLabel
             className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
           />
         ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center text-center px-6 bg-gradient-to-br from-stone-100 via-rose-50 to-stone-200">
+          <div className="w-full h-full flex flex-col items-center justify-center text-center px-6 bg-linear-to-br from-stone-100 via-rose-50 to-stone-200">
             <svg className="w-10 h-10 text-stone-300 mb-3" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
             </svg>
@@ -162,7 +162,7 @@ const IzmirGuide: React.FC<IzmirGuideProps> = ({ content }) => {
   return (
     <div className="bg-stone-50">
       {/* Hero */}
-      <header className="bg-gradient-to-b from-rose-50 to-stone-50 pt-32 pb-12 text-center">
+      <header className="bg-linear-to-b from-rose-50 to-stone-50 pt-32 pb-12 text-center">
         <div className="container mx-auto px-6 max-w-3xl">
           <h1 className="font-serif text-5xl md:text-7xl text-stone-900 mb-6">{guide.title}</h1>
           <p className="text-stone-600 text-xl font-light leading-relaxed">{guide.subtitle}</p>
@@ -170,7 +170,7 @@ const IzmirGuide: React.FC<IzmirGuideProps> = ({ content }) => {
       </header>
 
       {/* Tabs */}
-      <div className="sticky top-16 z-30 bg-stone-50/90 backdrop-blur border-b border-stone-200">
+      <div className="sticky top-16 z-30 bg-stone-50/90 backdrop-blur-sm border-b border-stone-200">
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="flex justify-center gap-2 md:gap-4 py-4 flex-wrap">
             {tabs.map((tab) => {
